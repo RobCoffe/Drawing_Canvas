@@ -1,94 +1,25 @@
-<html lang="pt-br">
+html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawing_Canvas</title>
-    <link href="style.css" type="=text/css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Drawing Canvas</title>
 </head>
 <body>
-    
-    <div id="menu">
-        <a onclick="opc()" title="Opções" Salvar como></a>
-    </div> 
-
-    <div id="opc">
-        <input type="text" name="name" id="name" value="" placeholder="Digite o nome para o arquivo">
-
-        </p>&nbsp;
-        <span>Escolha o formato:</span>
-        <select id="formatos" name="formatos" value="">
-        <option value="PNG"> PNG </option>
-        <option value="WEBP"> WEBP </option>
-        </select>
-
-        <button onclick="salvar()" id="btn_save" > Baixar</button>
-
-
-        <div class="field">
-            <canvas id="canvas">
-                <div class="toons">
-                    <button onclick="undo()" class="button" id="desfazer">Desfazer</button>
-                    <button onclick="clear_canvas" class="button" id="apagar">Apagar</button>
-    
-                    <span id="text_size">Tamanho</span>
-                    
-                    <div id='tamanhos'>
-    
-                        <div id='back' onclick="width('2')" title='2px'>
-                            <div onclick="width('2')" style='width:2; height:2;' title='2px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('4')" title='4px'>
-                            <div onclick="width('4')" style='width:4; height:4;' title='4px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('6')" title='6px'>
-                            <div onclick="width('6')" style='width:6; height:6;' title='6px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('8')" title='8px'>
-                            <div onclick="width('8')" style='width:7; height:7;' title='8px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('10')" title='10px'>
-                            <div onclick="width('10')" style='width:8; height:8;' title='10px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('12')" title='15px'>
-                            <div onclick="width('12')" style='width:9; height:9;' title='15px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('16')" title='20'>
-                            <div onclick="width('16')" style='width:10; height:10;' title='20px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('20')" title='30px'>
-                            <div onclick="width('20')" style='width:15; height:15;' title='30px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('24')" title='45px'>
-                            <div onclick="width('24')" style='width:20; height:20;' title='45px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('30')" title='55px'>
-                            <div onclick="width('30')" style='width:25; height:25;' title='55px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('35')" title='75px'>
-                            <div onclick="width('35')" style='width:30; height:30;' title='75px'></div>
-                        </div>
-    
-                        <div id='back' onclick="width('40')" title='83px'>
-                            <div onclick="width('40')" style='width:35; height:35;' title='83px'></div>
-                        </div>          
-                </div>
-    
-            </canvas>
+    <section class="container">
+        <div id="ferramentas">
+            <h1>Desenho</h1>
+            <label for="paleta">Paleta</label>
+            <input id="paleta" name='paleta' type="color">
+            <label for="lineWidth">Largura da Linha</label>
+            <input id="lineWidth" name='lineWidth' type="number" value="5">
+            <button id="Limpar">Limpar</button>
         </div>
-    </div>
-
-
-
+        <div class="drawing-board">
+            <canvas id="drawing-board"></canvas>
+        </div>
+    </section>
+    <script src="./index.js"></script>
 </body>
 </html>
