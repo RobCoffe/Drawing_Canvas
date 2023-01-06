@@ -18,3 +18,12 @@ Status do projeto em desenvolvimento.
 
 (***Status of the project under development***)
 
+Inicio do projeto - 03/01/2023.
+
+(***Project Start - 01/03/2023.***)
+
+Data de finalização do projeto - 08/01/2023.
+
+(***Project finishing date - 01/08/2023.***)
+
+
