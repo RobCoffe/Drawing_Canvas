@@ -1,5 +1,5 @@
-const canvas = document.getElementById('drawing-board');
-const toolbar = document.getElementById('ferramentas');
+const canvas = document.getElementById('quadro');
+const ferramentas = document.getElementById('ferramentas');
 const ctx = canvas.getContext('2d');
 
 const canvasOffsetX = canvas.offsetLeft;
@@ -9,7 +9,7 @@ canvas.width = window.innerWidth - canvasOffsetX;
 canvas.height = window.innerHeight - canvasOffsetY;
 
 let isPainting = false;
-let lineWidth = 5;
+let tamanhoLinha = 5;
 let startX;
 let startY;
 
@@ -24,8 +24,8 @@ ferramentas.addEventListener('change', e => {
         ctx.strokeStyle = e.target.value;
     }
 
-    if(e.target.id === 'lineWidth') {
-        lineWidth = e.target.value;
+    if(e.target.id === 'tamanhoLinha') {
+        tamanhoLinha = e.target.value;
     }
     
 });
@@ -34,3 +34,24 @@ const draw = (e) => {
     if(!isPainting) {
         return;
     }
+
+    ctx.tamanhoLinha = tamanhoLinha;
+    ctx.lineCap = 'round';
+
+    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
+    ctx.stroke();
+}
+
+canvas.addEventListener('mousedown', (e) => {
+    isPainting = true;
+    startX = e.clientX;
+    startY = e.clientY;
+});
+
+canvas.addEventListener('mouseup', e => {
+    isPainting = false;
+    ctx.stroke();
+    ctx.beginPath();
+});
+
+canvas.addEventListener('mousemove', draw);

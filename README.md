@@ -14,9 +14,9 @@ As technologias utilizadas serão JavaScrypt e HTML.
 (***The technologies used will be JavaScrypt and HTML.***)
 
 
-Status do projeto em desenvolvimento.
+Status do projeto: Finalizado.
 
-(***Status of the project under development***)
+(***Status of the project: finished***)
 
 Inicio do projeto - 03/01/2023.
 
